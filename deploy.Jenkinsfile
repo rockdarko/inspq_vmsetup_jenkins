@@ -44,7 +44,7 @@ pipeline {
                 	    TAG_CHOICE = "non"
                 	}
                 	if ( "${TAG_CHOICE}" == "oui" ) {
-	                	ansible-playbook -i /cellardoor/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} docker_login.yml
+	                	sh "ansible-playbook -i /cellardoor/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} docker_login.yml"
 			        	}
 		        	}
 		        }
