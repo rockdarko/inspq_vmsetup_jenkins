@@ -4,6 +4,9 @@
 #  - name: fail2ban
 #  - name: inspq_vmsetup
   tasks:
+  - name: fail2ban
+    include_role:
+      name: fail2ban
   - name: inspq_vmsetup
     include_role:
       name: inspq_vmsetup
