@@ -2,6 +2,6 @@ roles:
   - name: fail2ban
     src: git+git@github.com:rockdarko/fail2ban.git
     version: master
-  - name: ansible_vmsetup
+  - name: inspq_vmsetup
     src: git+git@github.com:rockdarko/inspq_vmsetup.git
     version: main
