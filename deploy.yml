@@ -6,4 +6,4 @@
   tasks:
   - name: inspq_vmsetup
     include_role:
-    - name: inspq_vmsetup
+      name: inspq_vmsetup
