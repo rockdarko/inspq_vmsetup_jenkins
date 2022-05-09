@@ -35,7 +35,7 @@ pipeline {
 		                		parameters: [ 
 		                			[$class: 'ChoiceParameterDefinition', 
 		                			choices: [ 'yes','no' ].join('\n'), 
-		                			name: 'continu'] 
+		                			name: 'Select:'] 
 		                		]
 		                	)
 		                } 
