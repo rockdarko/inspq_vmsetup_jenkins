@@ -1,8 +1,4 @@
 - hosts: all
   become: yes
-
-  tasks:
-  - name: updates
-    pkg:
-    name: *
-    state: latest
+  roles:
+  - name: inspq_vmsetup
