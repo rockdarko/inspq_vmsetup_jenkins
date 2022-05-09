@@ -5,5 +5,3 @@ roles:
   - name: inspq_vmsetup
     src: git+git@github.com:rockdarko/inspq_vmsetup.git
     version: main
-collections:
-  - name: jonellis.sudoers
