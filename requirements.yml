@@ -4,4 +4,4 @@ roles:
     version: master
   - name: ansible_vmsetup
     src: git+git@github.com:rockdarko/inspq_vmsetup.git
-    version: master
+    version: main
