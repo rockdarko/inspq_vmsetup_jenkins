@@ -31,7 +31,7 @@ pipeline {
 		            	timeout (time: 1, unit: "HOURS" ){
 							DEPLOY_DOCKERLOGIN = input(
 		                		id: 'docker_login',
-		                		message: "Continu?",
+		                		message: "Continue?",
 		                		parameters: [ 
 		                			[$class: 'ChoiceParameterDefinition', 
 		                			choices: [ 'yes','no' ].join('\n'), 
