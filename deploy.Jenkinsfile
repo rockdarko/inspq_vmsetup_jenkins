@@ -49,6 +49,9 @@ pipeline {
 		        	else {
 		        	    currentBuild.getRawBuild().getExecutor().interrupt(Result.SUCCESS)
 		        	}
+                    catch (err) {
+                	    DEPLOY_DOCKERLOGIN = "no"
+                	}
 		        }
 			}
         }
