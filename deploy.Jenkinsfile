@@ -25,17 +25,12 @@ pipeline {
             }
         }
         stage ('Nexus Login') {
-            when {
-	        	expression {
-	        		return TAG_CHOICE == "yes"
-	        	}
-            }
             steps {
 				script {
 					try {
 		            	timeout (time: 1, unit: "HOURS" ){
 							DEPLOY_DOCKERLOGIN = input(
-		                		id: 'tag_choice',
+		                		id: 'docker_login',
 		                		message: "Continu?",
 		                		parameters: [ 
 		                			[$class: 'ChoiceParameterDefinition', 
