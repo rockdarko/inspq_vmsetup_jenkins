@@ -1,8 +1,5 @@
 - hosts: all
   become: yes
-#  roles:
-#  - name: fail2ban
-#  - name: inspq_vmsetup
   tasks:
   - name: fail2ban
     include_role:
