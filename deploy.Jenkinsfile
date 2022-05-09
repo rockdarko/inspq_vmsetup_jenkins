@@ -46,12 +46,12 @@ pipeline {
                 	if ( "${DEPLOY_DOCKERLOGIN}" == "oui" ) {			
 			        	sh "ansible-playbook -i /cellardoor/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} docker_login.yml"
 				        	}
-		        	else {
-		        	    currentBuild.getRawBuild().getExecutor().interrupt(Result.SUCCESS)
-		        	}
                     catch (err) {
                 	    DEPLOY_DOCKERLOGIN = "no"
                 	}
+		        	else {
+		        	    currentBuild.getRawBuild().getExecutor().interrupt(Result.SUCCESS)
+		        	}
 		        }
 			}
         }
