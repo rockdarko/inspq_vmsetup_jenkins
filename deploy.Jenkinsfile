@@ -35,7 +35,7 @@ pipeline {
 		                		parameters: [ 
 		                			[$class: 'ChoiceParameterDefinition', 
 		                			choices: [ 'yes','no' ].join('\n'), 
-		                			name: 'tag'] 
+		                			name: 'continu'] 
 		                		]
 		                	)
 		                } 
@@ -46,7 +46,7 @@ pipeline {
                     if ( "${DEPLOY_DOCKERLOGIN}" == "no" ) {
                 	    currentBuild.getRawBuild().getExecutor().interrupt(Result.SUCCESS)
                 	}
-                	if ( "${DEPLOY_DOCKERLOGIN}" == "oui" ) {			
+                	if ( "${DEPLOY_DOCKERLOGIN}" == "yes" ) {			
 			        	sh "ansible-playbook -i /cellardoor/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} docker_login.yml"
 				        	}
 		        	else {
