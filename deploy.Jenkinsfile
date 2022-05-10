@@ -21,7 +21,7 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                sh "ansible-playbook -i /cellardoor/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} -e action=install -e fail2ban_state=true -e fail2ban_ssh_port=22 -e fail2ban_ssh_logpath=/var/log/auth.log -e fail2ban_ssh_maxretry=3 -e fail2ban_ssh_bantime=300 -e fail2ban_ssh_findtime=3000 -e copyconfig=false -e sudoers_user=${env.SUDOERS} -e docker_dns=${env.DOCKER_DNS} deploy.yml"
+                sh "ansible-playbook -i /cellardoor/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} -e action=install -e fail2ban_state=true -e fail2ban_ssh_port=${env.FAIL2BAN_SSH_PORT} -e fail2ban_ssh_logpath=${env.FAIL2BAN_SSH_LOGPATH} -e fail2ban_ssh_maxretry=${env.FAIL2BAN_MAXRETRY} -e fail2ban_ssh_bantime=${env.FAIL2BAN_BANTIME} -e fail2ban_ssh_findtime=${env.FAIL2BAN_FINDTIME} -e copyconfig=false -e sudoers_user=${env.SUDOERS} -e docker_dns=${env.DOCKER_DNS} deploy.yml"
             }
         }
         stage ('Nexus Login') {
